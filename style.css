@@ -1,0 +1,180 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+a{
+    height: 10px;
+    width: 10px;
+    border-radius: 5%;
+
+}
+a:hover{
+    color: black;
+background-color: #f0f0f0;
+}
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.logo {
+    height: 50px; /* Adjust the height to your needs */
+    margin-right: 10px;
+   
+}
+
+.site-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.intro, .about-us, .explore-free-courses, .categories {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #4CAF50;
+}
+
+h3 {
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #fff;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+.benefits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: auto;
+}
+
+.benefit-box {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px 10px;
+    padding: 20px;
+    width: 13%; /* Adjusted width to fit 4 boxes in a row */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.benefit-box img {
+    height: 50px; /* Adjust the height of the logos */
+    margin-bottom: 5px;
+}
+
+.benefit-box:hover {
+    transform: translateY(-5px);
+    background-color: #79cb7d;
+  
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 768px) {
+    .benefit-box {
+        width: 48%; /* Two boxes per row on smaller screens */
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .benefit-box {
+        width: 100%; /* One box per row on small screens */
+        margin-bottom: 20px;
+    }
+}
+button{
+    justify-content: center;
+    height: 50px;
+    width: 70px;
+    padding: 10px 10px ;
+    box-shadow: 0 4px 10px rgba(54, 50, 50, 0.2);
+    background-color: white;
+    color: black;
+}button:hover{
+    color: black;
+    background-color: #45a049;
+}
+.categories{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: auto;
+    margin-bottom: 10%;
+}
