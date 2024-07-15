@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.jpeg">
+    <link rel="stylesheet" href="login-style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="img/logo.jpeg" alt="Logo" class="logo">
+            <span class="site-title">E-learning</span>
+        </div>
+    </header>
+    <main>
+        <center>
+            <div class="container3">
+                <h1>LOGIN</h1>
+                <form action="/submit" method="post" id="login-form">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <input type="checkbox" id="show-password"> Show Password
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </center>
+    </main>
+    <footer>
+        <p>&copy; 2024 E-Learning Platform</p>
+    </footer>
+    <script>
+        document.getElementById('show-password').addEventListener('change', function() {
+            const passwordField = document.getElementById('password');
+            if (this.checked) {
+                passwordField.type = 'text';
+            } else {
+                passwordField.type = 'password';
+            }
+        });
+    </script>
+</body>
+</html>
