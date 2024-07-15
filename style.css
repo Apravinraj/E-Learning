@@ -119,6 +119,7 @@ form button:hover {
     justify-content: space-between;
     margin-left: 10px;
     margin-right: auto;
+    margin-bottom: 10%;
 }
 
 .benefit-box {
@@ -178,3 +179,73 @@ button{
     margin-right: auto;
     margin-bottom: 10%;
 }
+.intro{
+    margin-bottom: 5%;
+}
+/*
+
+img1{
+    margin-top: 10px;
+    padding-top: 30px;
+    position: relative;
+}*/
+
+.about-us{
+    display: flex;
+    margin-top: 20px;
+    
+}
+.container{
+    flex-direction: column;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+.arrow-bullets ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 20px; /* Add padding to align text */
+  }
+  
+  .arrow-bullets li::before {
+    content: "\2192"; /* Unicode for right arrow (→) */
+    color: black; /* Arrow color */
+    font-size: 16px; /* Arrow size */
+    margin-right: 10px; /* Space between arrow and text */
+  }
+
+
+  .button {
+    height: auto;
+    width: auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: show; /* Hide overflow if text is too long */
+    text-overflow: ellipsis; /* Add ellipsis if text is too long */
+  }
+  .button:hover {
+    background-color: #0056b3;
+  }
+ 
+
+  .container2 {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Ensure space between text and image */
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+  .Explore {
+    padding: 10px;
+    flex-grow: 1; /* Allow text to take up remaining space */
+    margin-right: 20px; /* Add space between text and image */
+  }
+  img2 {
+    max-width: 100px; /* Adjust the image size as needed */
+    height: auto; /* Maintain the aspect ratio */
+  }
