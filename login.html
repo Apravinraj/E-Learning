@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In</title>
+    <title>Signup</title>
     <link rel="icon" type="image/x-icon" href="img/logo.jpeg">
     <link rel="stylesheet" href="login-style.css">
 </head>
@@ -17,34 +17,40 @@
     <main>
         <center>
             <div class="container3">
-                <h1>LOGIN</h1>
-                <form action="/submit" method="post" id="login-form">
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                <h1>Signup</h1>
+                <div id="content_container">
+                    <div id="form_container">
+                        <div id="form_header_container"></div>
+                        <div id="form_content_container">
+                            <div id="form_content_inner_container">
+                                <input type="email" id="email" placeholder="Email">
+                                <div class="input-group">
+                                    <input type="password" id="password" placeholder="Password">
+                                    <span class="toggle-password" id="toggle" onclick="togglePassword()">👁️</span>
+                                </div>
+                                <div id="button_container">
+                                   <button onclick="login()">Login</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="Password" required>
-                        <input type="checkbox" id="show-password"> Show Password
-                    </div>
-                    <button type="submit">Submit</button>
-                </form>
+                </div>
+                 <p>Create new account?<a href="signup.html"> Signup </a></p> 
             </div>
         </center>
     </main>
     <footer>
         <p>&copy; 2024 E-Learning Platform</p>
     </footer>
+    <script type="module" src="index.js"></script>
     <script>
-        document.getElementById('show-password').addEventListener('change', function() {
+        function togglePassword() {
             const passwordField = document.getElementById('password');
-            if (this.checked) {
-                passwordField.type = 'text';
-            } else {
-                passwordField.type = 'password';
-            }
-        });
+            const togglePasswordIcon = document.querySelector('.toggle-password');
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+            togglePasswordIcon.textContent = type === 'password' ? '👁️' : '👁️‍🗨️';
+        }
     </script>
 </body>
 </html>

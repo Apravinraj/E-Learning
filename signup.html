@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.jpeg">
+    <link rel="stylesheet" href="login-style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="img/logo.jpeg" alt="Logo" class="logo">
+            <span class="site-title">E-learning</span>
+        </div>
+    </header>
+    <main>
+        <center>
+            <div class="container3">
+                <h1>Signup</h1>
+                <div id="content_container">
+                    <div id="form_container">
+                        <div id="form_header_container"></div>
+                        <div id="form_content_container">
+                            <div id="form_content_inner_container">
+                                <input type="text" id="user_name" placeholder="User name">
+                                <input type="email" id="email" placeholder="Email">
+                                <div class="input-group">
+                                    <input type="password" id="password" placeholder="New Password">
+                                    <span class="toggle-password" onclick="togglePassword()">👁️</span>
+                                </div>
+                                <div id="button_container">
+                                 <!--   <button onclick="login()">Login</button>-->
+                                    <button onclick="register()">Register</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <p>Already have an account?<a href="login.html"> Login </a></p> 
+            </div>
+        </center>
+    </main>
+    <footer>
+        <p>&copy; 2024 E-Learning Platform</p>
+    </footer>
+    <script type="module" src="index.js"></script>
+    <script>
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const togglePasswordIcon = document.querySelector('.toggle-password');
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+            togglePasswordIcon.textContent = type === 'password' ? '👁️' : '👁️‍🗨️';
+        }
+    </script>
+</body>
+</html>
