@@ -151,3 +151,7 @@ a {
     flex: 1;
     margin: 5px;
 }
+
+.toggle-password{
+    padding-bottom: 12px;
+}

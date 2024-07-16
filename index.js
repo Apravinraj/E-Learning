@@ -47,6 +47,7 @@ window.register = function() {
             set(userRef, userData)
                 .then(() => {
                     alert('User Created!!');
+                    location.href = "login.html"
                 })
                 .catch((error) => {
                     console.error('Error writing user data to database:', error);
