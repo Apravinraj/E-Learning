@@ -3,11 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Profile</title>
+    <title>User Profile</title>
     <link rel="icon" type="image/x-icon" href="img/logo.jpeg">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .profile-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .profile-container h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .profile-container p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .courses-section {
+            margin-top: 40px;
+        }
+        .courses-section h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        .courses-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .course-box {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            width: 45%;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .course-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .course-box img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .course-details {
+            margin-top: 10px;
+        }
+        .course-details h4 {
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -15,7 +75,7 @@
             <img src="img/logo.jpeg" alt="Logo" class="logo">
             <span class="site-title">E-learning</span>
         </div>
-        <h1>Your Profile</h1>
+       
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -25,15 +85,55 @@
         </nav>
     </header>
     <main>
-        <section>
-            <h2>Welcome, [User's Name]</h2>
-            <p>Email: user@example.com</p>
-            <p>Enrolled Courses:</p>
-            <ul>
-                <li>Course 1: Introduction to Programming</li>
-                <li>Course 2: Web Development Basics</li>
-            </ul>
-        </section>
+        <div class="profile-container">
+          
+            <p id="profile-username"></p>
+            <p id="profile-email"></p>
+
+            <div class="courses-section">
+                <h3>Courses Enrolled</h3>
+                <div class="courses-container" id="courses-enrolled">
+                    <div class="course-box">
+                        <img src="img/course-3.jpg" alt="Course Image">
+                        <div class="course-details">
+                            <h4>Course Name: Introduction to JavaScript</h4>
+                            <p>Total Hours: 20</p>
+                            <p>Enrolled Date: 2023-12-01</p>
+                        </div>
+                    </div>
+                    <div class="course-box">
+                        <img src="img/course-4.jpg" alt="Course Image">
+                        <div class="course-details">
+                            <h4>Course Name: Python Programming</h4>
+                            <p>Total Hours: 25</p>
+                            <p>Enrolled Date: 2023-11-25</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="courses-section">
+                <h3>Courses Finished</h3>
+                <div class="courses-container" id="courses-finished">
+                    <div class="course-box">
+                        <img src="img/course-1.jpg" alt="Course Image">
+                        <div class="course-details">
+                            <h4>Course Name: HTML Course for Beginners </h4>
+                            <p>Total Hours: 10</p>
+                            <p>Completion Date: 2023-12-15</p>
+                        </div>
+                    </div>
+                    <div class="course-box">
+                        <img src="img/course-2.jpg" alt="Course Image">
+                        <div class="course-details">
+                            <h4>Course Name: Front End Development-CSS</h4>
+                            <p>Total Hours: 15</p>
+                            <p>Completion Date: 2023-11-20</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
         <div class="footer-container">
@@ -48,13 +148,12 @@
                 </ul>
             </div>
             <div class="footer-column">
-                
                 <h3>Contact Us</h3>
                 <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Anytown, USA</p>
                 <p><i class="fas fa-phone-alt"></i> (123) 456-7890</p>
                 <p><i class="fas fa-envelope"></i> E-Learning@example.com</p>
 
-             <div class="social-icons">
+                <div class="social-icons">
                     <a href="https://twitter.com/" class="fab fa-twitter"></a>
                     <a href="https://facebook.com/" class="fab fa-facebook-f"></a>
                     <a href="https://youtube.com/" class="fab fa-youtube"></a>
@@ -64,5 +163,48 @@
         </div>
         <p>&copy; 2024 E-Learning Platform</p>
     </footer>
+    <script type="module">
+        // Import the Firebase functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+        import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-database.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBwT7IjMahOKSvMvdwIxzWwnW8lhwbfPuU",
+            authDomain: "e-learning-46b8d.firebaseapp.com",
+            projectId: "e-learning-46b8d",
+            storageBucket: "e-learning-46b8d.appspot.com",
+            messagingSenderId: "992038210419",
+            appId: "1:992038210419:web:68020e97b412a186fbd306"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const database = getDatabase(app);
+
+        // Listen for auth state changes
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in, fetch user details
+                const userRef = ref(database, 'users/' + user.uid);
+                get(userRef).then((snapshot) => {
+                    if (snapshot.exists()) {
+                        const userData = snapshot.val();
+                        document.getElementById('profile-username').textContent = `Username: ${userData.user_name}`;
+                        document.getElementById('profile-email').textContent = `Email: ${userData.email}`;
+                    } else {
+                        console.log("No user data found!");
+                    }
+                }).catch((error) => {
+                    console.error("Error fetching user data:", error);
+                });
+            } else {
+                // No user is signed in, redirect to login page
+                location.href = 'login.html';
+            }
+        });
+    </script>
 </body>
 </html>
