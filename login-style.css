@@ -9,13 +9,57 @@ body {
     flex-direction: column;
 }
 
-/* Header and Footer Styles */
+/* Header Styles */
 header {
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Dark background for the header */
     color: white;
     padding: 1em 0;
     text-align: center;
+    position: relative;
 }
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Logo Image */
+.logo {
+    height: 60px; /* Adjusted height for better visibility */
+    margin-right: 10px;
+    border-radius: 50%; /* Circular logo */
+    border: 3px solid white; /* White border for contrast */
+}
+
+/* Site Title */
+.site-title {
+    font-size: 2em; /* Increased font size for prominence */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+}
+
+/* Ensure the header and logo container take full width */
+header, .logo-container {
+    width: 100%;
+}
+
+/* Center logo container */
+.header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* For center alignment */
+header .site-title {
+    margin-top: 10px; /* Space between logo and title */
+}
+
 
 footer {
     background-color: #333;
